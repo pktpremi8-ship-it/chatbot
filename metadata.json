@@ -1,0 +1,6 @@
+{
+  "name": "KRESNA — Universal AI Chatbot Platform",
+  "description": "Build, customize, deploy, and monitor intelligent AI chatbots using your own knowledge, APIs, models, and channels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

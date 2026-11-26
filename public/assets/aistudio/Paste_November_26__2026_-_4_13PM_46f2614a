@@ -1,0 +1,1559 @@
+# KRESNA — UNIVERSAL AI CHATBOT PLATFORM
+## MASTER PRODUCT & ENGINEERING BUILD SPECIFICATION
+
+### 1. YOUR ROLE
+
+You are acting as a complete senior product engineering team consisting of:
+
+- Principal SaaS Product Architect
+- Principal AI Agent Engineer
+- Conversational AI Researcher
+- Senior Full-Stack Engineer
+- RAG and Knowledge Intelligence Specialist
+- API Integration Architect
+- Omnichannel Messaging Engineer
+- DevSecOps Engineer
+- Product UX/UI Designer
+- QA and AI Evaluation Engineer
+
+Your mission is to research, design, develop, test, and prepare a commercial-grade AI chatbot SaaS platform called KRESNA.
+
+Do not build a clone of an existing chatbot factory.
+
+Do not simply reproduce the architecture or user experience of the legacy SERA KRESNA application.
+
+Build a simpler, more accessible, more flexible, and more commercially attractive product from first principles.
+
+The platform must be usable by:
+1. Non-technical business owners.
+2. Customer service managers.
+3. Small and medium businesses.
+4. Enterprise administrators.
+5. Software developers and technical teams.
+
+The user should not need to understand LLM architecture, RAG pipelines, vector databases, LangGraph, prompt engineering, or webhook implementation to create a functioning chatbot.
+
+Advanced customization must remain available to developers.
+
+---
+
+# 2. PRODUCT VISION
+
+## Product positioning
+
+KRESNA is a universal AI chatbot platform that enables anyone to build, customize, deploy, and monitor intelligent chatbots using their own knowledge, APIs, AI models, and communication channels.
+
+Core product promise:
+
+"Bring Your Knowledge. Connect Your APIs. Choose Your AI. Publish Everywhere."
+
+The complete user journey should be:
+
+CREATE CHATBOT
+→ CONNECT KNOWLEDGE
+→ CONNECT APIs
+→ SELECT AI MODEL
+→ TEST CONVERSATION
+→ CONNECT CHANNELS
+→ PUBLISH
+→ MONITOR AND IMPROVE
+
+The experience must be significantly simpler than traditional enterprise chatbot development platforms.
+
+## Core product principles
+
+1. Minimal configuration.
+2. Maximum useful functionality.
+3. LLM-led conversational intelligence.
+4. Reusable integration infrastructure.
+5. Multi-provider model support.
+6. Multi-source knowledge.
+7. Multi-channel deployment.
+8. Developer extensibility.
+9. Comprehensive monitoring.
+10. Secure multi-tenant SaaS architecture.
+
+The product should feel like a ready-to-use commercial service, not an engineering toolkit.
+
+---
+
+# 3. PRODUCT DIFFERENTIATION: INTELLIGENT CONVERSATIONAL EXPERIENCE
+
+THIS IS THE MOST IMPORTANT REQUIREMENT.
+
+The core competitive advantage of KRESNA must be its conversational intelligence.
+
+Do not build another FAQ chatbot that asks predefined questions or follows rigid decision trees.
+
+The chatbot must behave like a capable human customer service representative.
+
+## 3.1 LLM-Led Conversation
+
+The LLM must be the primary reasoning and decision-making engine for every user message.
+
+It must understand:
+
+- What the user actually wants.
+- What situation the user is experiencing.
+- Whether the message continues an existing conversation.
+- Whether the user changes topics.
+- What information is already available.
+- What information is missing.
+- Whether a knowledge search is necessary.
+- Whether an API call is necessary.
+- Whether a clarification question is useful.
+- Whether the user's request can already be completed.
+
+Do not require hardcoded intent classification for ordinary conversational understanding.
+
+Do not require predefined diagnostic stages.
+
+Do not create a separate workflow for every FAQ.
+
+Do not force every user message through the same sequence.
+
+The model must dynamically decide what to do based on the complete conversational context.
+
+## 3.2 Natural Diagnostic Intelligence
+
+Diagnostic follow-up should emerge naturally from the conversation.
+
+Example:
+
+User:
+"I can't complete my booking."
+
+Assistant:
+Understands the problem, searches relevant knowledge, and asks a useful question if the answer is not yet clear.
+
+User:
+"There is no error message."
+
+Assistant:
+Recognizes that information and decides whether additional information is actually necessary.
+
+User:
+"Just create a support ticket."
+
+Assistant:
+Stops unnecessary diagnosis, summarizes the problem, collects only mandatory information, and prepares the ticket.
+
+The agent must not insist on completing unnecessary diagnostic questions before helping the user.
+
+## 3.3 Contextual Understanding
+
+Maintain persistent conversational context containing:
+
+- Current user objective.
+- Conversation history.
+- User-provided information.
+- Confirmed information.
+- Extracted entities.
+- Previous questions and answers.
+- Knowledge evidence.
+- Previous API observations.
+- Pending actions.
+- Unresolved tasks.
+
+Differentiate between:
+
+- Verified information.
+- User-reported information.
+- Model inference.
+- Unknown information.
+
+Never present model inference as verified external data.
+
+## 3.4 Universal Agent Loop
+
+Implement one reusable agent runtime:
+
+USER MESSAGE
+↓
+CONTEXT ASSEMBLY
+↓
+LLM REASONING AND ACTION PLANNING
+↓
+DYNAMIC ACTION SELECTION
+  - Answer directly
+  - Search knowledge
+  - Search multiple sources
+  - Call an API
+  - Ask clarification
+  - Request confirmation
+  - Retry a recoverable operation
+  - Escalate
+↓
+EXECUTE SELECTED ACTION
+↓
+OBSERVE REAL RESULTS
+↓
+LLM RE-EVALUATION
+↓
+FINAL RESPONSE OR NEXT ACTION
+
+The loop must be bounded by configurable iteration limits, timeouts, and token budgets.
+
+The model should control conversational decisions.
+
+Backend code should enforce security, permissions, input validation, confirmation, idempotency, and execution policies.
+
+Do not expose private chain-of-thought.
+
+Keep concise, inspectable action traces instead.
+
+## 3.5 Conversational Quality Rules
+
+The assistant must:
+
+- Never repeatedly introduce itself during an ongoing conversation.
+- Never forget information already supplied.
+- Never ask the same question twice without a valid reason.
+- Ask one useful question at a time.
+- Understand informal language, typos, abbreviations, and mixed languages.
+- Recognize user frustration.
+- Explain limitations without abandoning the conversation.
+- Recognize explicit requests for human assistance.
+- Never fabricate actions or results.
+- Use natural and contextually appropriate language.
+- Answer directly when sufficient evidence is available.
+
+Provide configurable personality, tone, language, and communication style.
+
+Do not confuse personality configuration with hardcoded conversation flows.
+
+---
+
+# 4. COMPETITIVE BENCHMARK AND PRODUCT RESEARCH
+
+Before implementing the product, perform actual internet research.
+
+Benchmark:
+
+1. Intercom Fin AI Agent.
+2. Zendesk AI Agents.
+3. Botpress.
+4. Ada.
+5. Salesforce Agentforce.
+6. Other relevant commercial AI chatbot platforms.
+
+Research:
+
+- Conversational reasoning.
+- Dynamic clarification.
+- Knowledge retrieval.
+- Multi-source RAG.
+- API integration.
+- Tool calling.
+- Model configuration.
+- Channel onboarding.
+- Website embedding.
+- WhatsApp integration.
+- Telegram integration.
+- Monitoring and analytics.
+- Quality evaluation.
+- Pricing and commercial positioning.
+- Developer extensibility.
+
+Use official documentation, technical documentation, and credible product demonstrations.
+
+Provide a comparison table containing:
+
+- Feature.
+- Platform.
+- Verified capability.
+- How it works.
+- Potential weakness.
+- KRESNA implementation recommendation.
+
+Provide source URLs and access dates.
+
+Do not invent benchmark capabilities.
+
+Translate benchmark findings into concrete engineering requirements.
+
+---
+
+# 5. SIMPLE PRODUCT EXPERIENCE
+
+## 5.1 Quick Start Wizard
+
+The primary experience must be a simple onboarding wizard.
+
+A new user should be able to create a basic chatbot without needing technical knowledge.
+
+Target experience:
+
+### STEP 1 — CREATE YOUR CHATBOT
+
+Ask only:
+
+- Chatbot name.
+- What does this chatbot help users with?
+- Preferred language.
+- Communication style.
+
+Provide presets such as:
+
+- Customer Support.
+- Sales Assistant.
+- Product Advisor.
+- Internal Company Assistant.
+- Technical Support.
+- Booking Assistant.
+- Custom.
+
+Generate an initial assistant configuration automatically.
+
+### STEP 2 — ADD KNOWLEDGE
+
+Offer simple connection choices:
+
+- Upload documents.
+- Connect a website.
+- Connect an API.
+- Import an OpenAPI specification.
+- Add structured FAQ data.
+- Connect future external sources.
+
+Automatically inspect and process the knowledge.
+
+Show:
+
+- What was successfully imported.
+- Number of documents.
+- Number of knowledge records.
+- Processing status.
+- Potential issues.
+- Test questions.
+
+Allow the user to continue without manually configuring embeddings, chunking, or vector search.
+
+### STEP 3 — CHOOSE YOUR AI
+
+Provide a model configuration interface.
+
+Initial providers:
+
+1. Google Gemini — default provider.
+2. Azure OpenAI.
+3. Generic OpenAI-compatible providers as an extensible option.
+
+Allow users to enter their own API keys.
+
+Display available models after validating the provider connection.
+
+Let users choose:
+
+- Model.
+- Temperature where supported.
+- Maximum output tokens.
+- Context settings.
+- Optional fallback model.
+- Cost preferences.
+
+Provide recommended default settings.
+
+Users should not need to understand these parameters to get started.
+
+### STEP 4 — CONNECT CHANNELS
+
+Provide channel cards:
+
+- Website.
+- WhatsApp.
+- Telegram.
+- Messenger.
+- Instagram.
+- Microsoft Teams.
+- Slack.
+- Future channels.
+
+Initially prioritize fully functional integrations for:
+
+1. Website.
+2. WhatsApp.
+3. Telegram.
+
+Each channel must have a guided connection wizard.
+
+### STEP 5 — TEST AND PUBLISH
+
+Provide a playground where users can test real conversations.
+
+Allow them to publish only after basic configuration and connection validation.
+
+Show:
+
+- Deployment status.
+- Public channel status.
+- Integration status.
+- Test result.
+- Deployment URL.
+- Installation instructions.
+
+Do not require the user to manually configure the underlying agent runtime.
+
+---
+
+# 6. MULTI-MODEL PROVIDER SYSTEM
+
+Implement a centralized model gateway.
+
+The model gateway must be provider-independent.
+
+## 6.1 Gemini
+
+Gemini is the default recommended provider.
+
+Support:
+
+- API key configuration.
+- Server-side credential storage.
+- Model discovery where supported.
+- Model selection.
+- Streaming.
+- Function/tool calling.
+- Structured output where supported.
+- Token usage tracking.
+- Error handling.
+- Connection testing.
+
+The initial setup should be as simple as:
+
+Provider: Google Gemini
+API Key: [Enter API key]
+Model: [Select model]
+[ Test Connection ]
+
+Do not expose credentials in browser code.
+
+## 6.2 Azure OpenAI
+
+Provide an easy connection wizard.
+
+Fields:
+
+- Azure resource endpoint.
+- Deployment name.
+- API key.
+- API version when required by the selected API compatibility profile.
+
+Support the current Azure OpenAI API contract and documented compatibility variations.
+
+Do not assume the Azure deployment name is always identical to the underlying model name.
+
+Test the connection before saving.
+
+Provide clear explanations of authentication and deployment errors.
+
+## 6.3 Provider Architecture
+
+Implement a provider adapter interface.
+
+Each adapter must expose:
+
+- Chat completion.
+- Streaming.
+- Tool calling.
+- Structured output.
+- Token usage.
+- Model metadata.
+- Error handling.
+- Capability information.
+
+Do not assume all models support identical features.
+
+Model selection must respect actual provider capabilities.
+
+Allow each chatbot to use a different model configuration.
+
+Support explicit model fallback where configured.
+
+Never silently switch to a different provider if the user has not authorized that behavior.
+
+## 6.4 Bring Your Own Key
+
+Implement BYOK as the initial commercial model.
+
+Each workspace can securely connect its own provider credentials.
+
+Prepare a future managed AI credit model for subscription plans.
+
+Never use one global provider credential to mix customer usage without tenant-level metering and isolation.
+
+---
+
+# 7. UNIVERSAL KNOWLEDGE CONNECTOR
+
+The platform must accept different types of knowledge with minimal configuration.
+
+## 7.1 Supported Knowledge
+
+Implement ingestion for:
+
+- PDF.
+- DOCX.
+- XLSX.
+- CSV.
+- TXT.
+- HTML.
+- Websites.
+- Sitemap URLs.
+- OpenAPI specifications.
+- REST API sources.
+
+Design the ingestion architecture to support future connectors.
+
+## 7.2 Excel Intelligence
+
+Excel support is especially important.
+
+Preserve:
+
+- Worksheet names.
+- Table headers.
+- Rows.
+- Question-answer relationships.
+- Categories.
+- Metadata.
+- Source references.
+
+Do not flatten Excel data into unrelated text chunks.
+
+Automatically identify FAQ structures and maintain their question-answer relationships.
+
+Provide a preview before activating the source.
+
+## 7.3 Website Knowledge
+
+Allow users to enter a website URL.
+
+Support:
+
+- Single-page ingestion.
+- Sitemap ingestion.
+- Multiple URLs.
+- Scheduled synchronization.
+- Manual refresh.
+- Source deletion.
+- Sync status.
+
+Respect robots.txt, website access restrictions, and reasonable crawling limits.
+
+Do not claim that a private website has been indexed without successful authenticated access.
+
+## 7.4 Knowledge Retrieval
+
+Use a hybrid retrieval architecture:
+
+- Semantic search.
+- Lexical search.
+- Metadata filtering.
+- Re-ranking.
+- Multi-source retrieval.
+- Evidence selection.
+- Grounded response generation.
+
+The agent should dynamically determine which authorized sources are relevant.
+
+It must not depend exclusively on hardcoded keyword matching.
+
+Provide source citations or references where useful.
+
+If the evidence is insufficient, the agent must express uncertainty and ask an appropriate question.
+
+---
+
+# 8. UNIVERSAL API CONNECTOR
+
+THIS IS A MAJOR PRODUCT FEATURE.
+
+The user should be able to connect their own API without writing backend code.
+
+## 8.1 API Connection Methods
+
+Support three connection methods.
+
+### Method A — OpenAPI Import
+
+Allow users to:
+
+- Paste an OpenAPI URL.
+- Upload an OpenAPI JSON or YAML file.
+
+Automatically:
+
+1. Read the specification.
+2. Discover endpoints.
+3. Read descriptions.
+4. Extract request parameters.
+5. Extract authentication requirements.
+6. Read request schemas.
+7. Read response schemas.
+8. Generate available actions.
+9. Allow users to select which endpoints the chatbot may use.
+10. Test selected endpoints.
+
+Generate structured tool definitions automatically.
+
+### Method B — Simple REST API Builder
+
+If OpenAPI is unavailable, provide a simple configuration form:
+
+- API name.
+- Description.
+- Base URL.
+- HTTP method.
+- Endpoint path.
+- Authentication type.
+- Headers.
+- Query parameters.
+- Request body.
+- Expected response structure.
+
+Support:
+
+- GET.
+- POST.
+- PUT.
+- PATCH.
+- DELETE.
+
+Provide a test request and response preview.
+
+Generate a usable tool schema from the configured endpoint.
+
+Do not make users write code for ordinary REST integrations.
+
+### Method C — Advanced Developer Integration
+
+Provide an extension mechanism for developers.
+
+Support custom tool implementations using a documented SDK.
+
+Provide a separate isolated Python extension service or worker for users who want custom Python code.
+
+Do not execute arbitrary user-supplied Python directly inside the main application process.
+
+Use isolated execution, resource limits, network restrictions, secret isolation, and explicit permissions.
+
+Google AI Studio's normal web application runtime uses React and Node.js; if Python execution is needed, deploy it as a separate service and communicate through a secured API.
+
+## 8.2 Distinguish Data APIs and Action APIs
+
+Support two categories:
+
+DATA CONNECTORS:
+
+- Read customer information.
+- Retrieve product information.
+- Retrieve order status.
+- Read inventory.
+- Query external databases.
+
+ACTION TOOLS:
+
+- Create an order.
+- Create a ticket.
+- Update customer information.
+- Cancel a booking.
+- Trigger a workflow.
+
+The LLM must be able to dynamically select an appropriate tool.
+
+## 8.3 Dynamic API Tool Calling
+
+Every registered tool must provide:
+
+- Name.
+- Description.
+- Input schema.
+- Output schema.
+- Authorization.
+- Risk classification.
+- Confirmation requirement.
+- Timeout.
+- Idempotency.
+- Execution policy.
+
+The agent should see relevant available tools and decide when they are useful.
+
+The backend must validate every call independently.
+
+Never fabricate API responses.
+
+If a tool fails, the agent should receive the real error observation and decide whether to retry, ask for information, explain the failure, or escalate.
+
+## 8.4 API Security
+
+Implement:
+
+- Encrypted credentials.
+- Server-side secret storage.
+- SSRF protection.
+- Private and metadata IP blocking.
+- DNS and redirect validation.
+- Outbound request restrictions.
+- Rate limiting.
+- Timeout controls.
+- Request validation.
+- Response size limits.
+- Credential redaction.
+- Audit logs.
+
+Never allow a public chatbot user to use the API connector as an unrestricted proxy to internal company systems.
+
+---
+
+# 9. OMNICHANNEL CHATBOT SYSTEM
+
+One chatbot should be deployable across multiple communication channels.
+
+Use a single shared agent runtime.
+
+Do not create a different intelligence engine for each channel.
+
+## 9.1 Website Widget
+
+Implement:
+
+- Floating chat button.
+- Customizable branding.
+- Responsive chat interface.
+- Welcome message.
+- Typing indicator.
+- Message streaming.
+- Conversation history.
+- Feedback.
+- File and image support where supported.
+- Human escalation.
+
+Generate a ready-to-use embed snippet.
+
+Example:
+
+<script
+  src="https://YOUR_DOMAIN/widget.js"
+  data-bot-id="YOUR_PUBLIC_BOT_ID">
+</script>
+
+The actual embed code must be generated from the saved chatbot configuration.
+
+Provide domain allowlisting and signed sessions.
+
+## 9.2 WhatsApp
+
+Implement integration with the official WhatsApp Business Platform Cloud API.
+
+Provide a guided setup.
+
+Guide users through:
+
+1. Creating or accessing their Meta developer application.
+2. Setting up a WhatsApp Business Account.
+3. Connecting their business phone number.
+4. Configuring access credentials.
+5. Configuring webhook verification.
+6. Subscribing to relevant message events.
+7. Testing inbound messages.
+8. Testing outbound replies.
+9. Publishing the channel.
+
+Automatically generate the webhook callback URL and verification instructions.
+
+Never pretend the integration is complete before Meta has successfully verified the connection.
+
+Explain channel-specific restrictions, message templates, messaging windows, and applicable platform policies.
+
+## 9.3 Telegram
+
+Integrate with the official Telegram Bot API.
+
+Provide a guided setup:
+
+1. Open Telegram.
+2. Create a bot through BotFather.
+3. Copy the bot token.
+4. Paste the token into KRESNA.
+5. Validate the token.
+6. Configure the webhook automatically.
+7. Test inbound and outbound messages.
+8. Activate the channel.
+
+Provide clear troubleshooting instructions.
+
+## 9.4 Additional Channels
+
+Design a reusable channel adapter interface.
+
+Prepare future integrations for:
+
+- Facebook Messenger.
+- Instagram.
+- Microsoft Teams.
+- Slack.
+- LINE.
+- Email.
+- Mobile applications.
+- Custom messaging platforms.
+
+Clearly distinguish available integrations from planned integrations.
+
+## 9.5 Unified Conversation Management
+
+Provide a unified inbox.
+
+All connected channels should use the same agent intelligence.
+
+Display:
+
+- Channel.
+- Customer identity.
+- Conversation.
+- Current status.
+- Assigned bot.
+- Escalation status.
+- Last message.
+- Response latency.
+
+Preserve channel-specific identity and message capabilities.
+
+Do not accidentally merge different users' conversations.
+
+---
+
+# 10. INTELLIGENT CHATBOT BUILDER
+
+Make chatbot creation extremely simple.
+
+The basic builder must only require:
+
+- Chatbot name.
+- Purpose.
+- Knowledge.
+- Model.
+- Channels.
+
+Advanced configuration should be optional.
+
+Provide two modes:
+
+### SIMPLE MODE
+
+For non-technical users.
+
+- Guided setup.
+- Recommended defaults.
+- Automated knowledge processing.
+- Automatic tool schema generation.
+- Recommended model settings.
+- Ready-made widget.
+- Guided publishing.
+
+### DEVELOPER MODE
+
+For programmers.
+
+- Custom system instructions.
+- Custom Python tool extensions through isolated services.
+- Custom REST APIs.
+- Webhook configuration.
+- Advanced model parameters.
+- Custom response formatting.
+- Retrieval configuration.
+- API request and response mapping.
+- SDK and developer documentation.
+
+Never make developer configuration mandatory for basic chatbot creation.
+
+---
+
+# 11. CHATBOT PLAYGROUND
+
+Create a production-quality test environment.
+
+Users must be able to:
+
+- Test conversations.
+- Ask follow-up questions.
+- Change topics.
+- Test knowledge retrieval.
+- Test API actions.
+- Test multiple models.
+- Compare responses.
+- Inspect source evidence.
+- Inspect tool execution.
+- Review latency.
+- Review token usage.
+- Provide feedback.
+
+Include a conversation debugger with:
+
+- Selected knowledge sources.
+- Retrieved documents.
+- Relevance scores.
+- Tool selection.
+- Tool execution result.
+- Model/provider.
+- Token consumption.
+- Execution duration.
+- Error status.
+
+Never expose private chain-of-thought.
+
+---
+
+# 12. COMPREHENSIVE MONITORING AND ANALYTICS
+
+Monitoring is a core product capability, not an optional dashboard.
+
+Build a centralized monitoring system.
+
+## 12.1 Overview Dashboard
+
+Show:
+
+- Total conversations.
+- Active conversations.
+- Resolved conversations.
+- Escalated conversations.
+- Resolution rate.
+- User satisfaction.
+- Negative feedback.
+- Average response time.
+- Model usage.
+- Estimated AI costs.
+- Channel distribution.
+- API success rate.
+
+All metrics must come from actual persisted data.
+
+Never fabricate dashboard values.
+
+## 12.2 Conversation Analytics
+
+Provide:
+
+- Conversation history.
+- Conversation replay.
+- Channel filter.
+- Chatbot filter.
+- Date range.
+- User feedback.
+- Resolution status.
+- Escalation status.
+- Search and export.
+
+## 12.3 AI Quality Monitoring
+
+Monitor:
+
+- Unsupported answer rate.
+- Retrieval failure.
+- Low-evidence answers.
+- Repeated clarification questions.
+- Repeated user messages.
+- User frustration indicators.
+- Tool selection errors.
+- Tool execution failures.
+- Topic switching failures.
+- Escalation quality.
+
+Provide actionable improvement recommendations.
+
+## 12.4 Model and Cost Monitoring
+
+Monitor by workspace, chatbot, channel, provider, and model:
+
+- Input tokens.
+- Output tokens.
+- Estimated cost.
+- API requests.
+- Failed requests.
+- Latency.
+- Usage trends.
+- Rate limits.
+
+Provide configurable usage alerts and spending limits.
+
+## 12.5 API Monitoring
+
+Monitor:
+
+- API health.
+- HTTP response codes.
+- Latency.
+- Failure frequency.
+- Timeout.
+- Rate limit errors.
+- Last successful execution.
+
+Redact API secrets and sensitive payloads.
+
+---
+
+# 13. MULTI-TENANT SAAS AND COMMERCIAL READINESS
+
+KRESNA must be a standalone commercial SaaS.
+
+It must not be dependent on SERA-specific users, knowledge, integrations, or business rules.
+
+## 13.1 Workspace
+
+Support multiple independent customer workspaces.
+
+Each workspace must have isolated:
+
+- Users.
+- Chatbots.
+- Knowledge.
+- API connections.
+- Model credentials.
+- Channels.
+- Conversations.
+- Analytics.
+- Billing information.
+
+Implement strict tenant isolation at both application and database levels.
+
+## 13.2 Authentication
+
+Support:
+
+- Email/password authentication.
+- Google authentication where available.
+- Microsoft authentication as an optional enterprise feature.
+- Secure session management.
+- Password reset.
+- Invitations.
+- Team management.
+
+## 13.3 Roles
+
+Provide:
+
+- Workspace Owner.
+- Administrator.
+- Developer.
+- Knowledge Manager.
+- Analyst.
+- Viewer.
+
+## 13.4 Subscription Readiness
+
+Prepare subscription architecture.
+
+Potential plans:
+
+- Free Trial.
+- Starter.
+- Professional.
+- Business.
+- Enterprise.
+
+Meter:
+
+- Number of chatbots.
+- Monthly conversations.
+- AI token usage.
+- Connected channels.
+- Knowledge storage.
+- API requests.
+- Team seats.
+- Advanced analytics.
+
+Implement usage limits and alerts.
+
+Keep payment-provider integration modular so it can be added without redesigning the product.
+
+## 13.5 White Label
+
+Allow future customers to customize:
+
+- Logo.
+- Brand name.
+- Widget colors.
+- Widget appearance.
+- Welcome message.
+- Custom domain.
+- Branding visibility.
+
+---
+
+# 14. DATA ARCHITECTURE
+
+Use a persistent, scalable database.
+
+Preferred initial architecture:
+
+- PostgreSQL.
+- pgvector.
+- Object storage for documents.
+- Redis or managed queue where justified.
+- Cloud Run for deployment.
+
+Do not rely on application memory or temporary filesystem storage for persistent conversation state.
+
+Suggested entities:
+
+- Workspaces.
+- Workspace members.
+- Chatbots.
+- Chatbot versions.
+- Model providers.
+- Model connections.
+- Knowledge sources.
+- Knowledge documents.
+- Knowledge chunks.
+- API connections.
+- Tool definitions.
+- Channel connections.
+- Conversations.
+- Messages.
+- Agent executions.
+- Tool executions.
+- User feedback.
+- Evaluation datasets.
+- Evaluation results.
+- Usage events.
+- Audit logs.
+- Subscription plans.
+
+Use database migrations.
+
+Use tenant isolation tests.
+
+Provide backup and recovery documentation.
+
+---
+
+# 15. SECURITY
+
+Implement:
+
+- Encrypted secrets.
+- Server-side API credentials.
+- Tenant isolation.
+- RBAC.
+- Knowledge permissions.
+- Tool permissions.
+- Webhook signature verification.
+- Channel token validation.
+- Rate limiting.
+- Request validation.
+- Input and output safeguards.
+- SSRF protection.
+- PII redaction.
+- Audit trails.
+- Secure file ingestion.
+- Retention and deletion policies.
+
+Public chatbots must not gain access to private workspace information.
+
+The model must never be able to override backend permissions.
+
+All write operations must follow the configured confirmation and authorization policies.
+
+---
+
+# 16. EVALUATION AND QUALITY ASSURANCE
+
+The conversational experience must be tested end-to-end.
+
+Create a benchmark dataset covering:
+
+1. Direct FAQ.
+2. Informal questions.
+3. Typographical errors.
+4. Ambiguous requests.
+5. Contextual follow-ups.
+6. Topic switching.
+7. Multiple knowledge sources.
+8. Diagnostic conversations.
+9. Explicit requests for actions.
+10. User frustration.
+11. API tool selection.
+12. API failure.
+13. Unauthorized data access.
+14. Unsupported questions.
+15. Human escalation.
+
+Include these regression scenarios:
+
+SCENARIO A:
+
+User:
+"I cannot complete pool out."
+
+The assistant must search relevant sources rather than assume a particular system or knowledge base.
+
+SCENARIO B:
+
+User:
+"There is no error message."
+
+The assistant must use this information and avoid repeating the same diagnostic question.
+
+SCENARIO C:
+
+User:
+"Just create a ticket."
+
+The assistant must respect the explicit goal and avoid unnecessary diagnosis.
+
+SCENARIO D:
+
+User:
+"Why can't you?"
+
+The assistant must understand that the user is challenging the previous limitation and explain an appropriate next step.
+
+It must not restart its introduction.
+
+SCENARIO E:
+
+User:
+"AB1254GN"
+
+The assistant must interpret this identifier using the active conversation context when appropriate.
+
+It must not treat it as an unrelated new request.
+
+## Evaluation metrics
+
+Measure:
+
+- Answer groundedness.
+- Retrieval precision.
+- Retrieval recall.
+- Tool selection accuracy.
+- Task completion.
+- Diagnostic efficiency.
+- Repeated-question rate.
+- Context retention.
+- Topic switching accuracy.
+- Hallucination rate.
+- Escalation accuracy.
+- User satisfaction.
+- Response latency.
+- Token consumption.
+- Cost per conversation.
+
+Create a regression evaluation process whenever:
+
+- Model configuration changes.
+- System instructions change.
+- Knowledge sources change.
+- Tool definitions change.
+- Agent runtime changes.
+
+Never claim quality improvement without test evidence.
+
+---
+
+# 17. TECHNICAL ARCHITECTURE AND IMPLEMENTATION
+
+Google AI Studio Build Mode is the primary development environment.
+
+Verify the current supported runtime and deployment capabilities before implementation.
+
+Recommended architecture:
+
+Frontend:
+- React.
+- TypeScript.
+- Responsive UI.
+
+Backend:
+- Node.js.
+- TypeScript.
+- Modular service architecture.
+
+Database:
+- Managed PostgreSQL.
+- pgvector.
+- Persistent storage.
+
+Deployment:
+- Google Cloud Run.
+- Cloud storage.
+- Managed secrets.
+
+Agent runtime:
+- Reusable LLM-led agent loop.
+- Provider abstraction.
+- Knowledge retrieval.
+- Dynamic tool execution.
+- Persistent conversation context.
+
+For custom Python extensions, create a separate isolated execution service.
+
+Do not pretend the standard Node.js runtime executes Python natively.
+
+Use external persistent storage for documents and conversation state.
+
+Design the application to handle horizontal scaling.
+
+Do not rely on in-memory session state.
+
+Use durable webhook processing and idempotency for channel integrations.
+
+---
+
+# 18. IMPLEMENTATION PHASES
+
+Do not attempt to generate the entire product in one uncontrolled operation.
+
+Build in functional phases.
+
+## PHASE 0 — RESEARCH AND ARCHITECTURE
+
+- Perform competitor research.
+- Define MVP.
+- Design architecture.
+- Identify integration requirements.
+- Define database.
+- Define security boundaries.
+- Define acceptance criteria.
+
+Produce a technical design report.
+
+## PHASE 1 — CORE SAAS FOUNDATION
+
+Build:
+
+- Landing page.
+- Authentication.
+- Workspace management.
+- Chatbot creation.
+- Quick Start Wizard.
+- Gemini provider connection.
+- Model selection.
+- Basic monitoring.
+
+The application must persist actual data.
+
+## PHASE 2 — CONVERSATIONAL INTELLIGENCE
+
+Build:
+
+- Universal LLM-led agent loop.
+- Persistent context.
+- Dynamic knowledge selection.
+- Hybrid retrieval.
+- Dynamic clarification.
+- Topic switching.
+- Grounded responses.
+- Conversation evaluation.
+
+Prioritize conversational quality over additional UI features.
+
+## PHASE 3 — KNOWLEDGE AND API CONNECTORS
+
+Build:
+
+- Excel.
+- CSV.
+- PDF.
+- DOCX.
+- Website ingestion.
+- OpenAPI import.
+- REST API connector.
+- Dynamic tool registration.
+- API monitoring.
+
+## PHASE 4 — MODEL PROVIDER MANAGEMENT
+
+Build:
+
+- Gemini BYOK.
+- Azure OpenAI BYOK.
+- Generic OpenAI-compatible provider.
+- Model catalogue.
+- Capability validation.
+- Usage and cost monitoring.
+
+## PHASE 5 — OMNICHANNEL
+
+Build and test:
+
+1. Website widget.
+2. Telegram.
+3. WhatsApp Cloud API.
+
+Then prepare extensible adapters for additional channels.
+
+## PHASE 6 — ADVANCED CUSTOMIZATION
+
+Build:
+
+- Developer SDK.
+- Python extension service.
+- Advanced configuration.
+- Custom integrations.
+- Webhook management.
+- White-label options.
+
+## PHASE 7 — QUALITY AND MONITORING
+
+Build:
+
+- Unified inbox.
+- Conversation replay.
+- AI quality analytics.
+- Tool analytics.
+- Cost analytics.
+- Automated evaluation.
+- Regression testing.
+
+## PHASE 8 — COMMERCIAL DEPLOYMENT
+
+Prepare:
+
+- Cloud Run deployment.
+- Custom domain.
+- Production authentication.
+- Tenant isolation.
+- Secret management.
+- Backups.
+- Monitoring.
+- Usage metering.
+- Subscription architecture.
+- User documentation.
+- Channel installation guides.
+
+Only claim production readiness after the security and operational checks pass.
+
+---
+
+# 19. UI/UX DESIGN DIRECTION
+
+Create a premium modern SaaS interface.
+
+Visual direction:
+
+- Clean.
+- Minimal.
+- Modern.
+- Professional.
+- Intuitive.
+- Responsive.
+- Fast.
+
+Avoid unnecessary visual complexity.
+
+Avoid excessive configuration screens.
+
+The primary dashboard should focus on:
+
+1. My Chatbots.
+2. Knowledge.
+3. Integrations.
+4. Channels.
+5. Conversations.
+6. Analytics.
+7. Settings.
+
+A new user should understand the product without reading a lengthy manual.
+
+Use clear language.
+
+Avoid technical terms in Simple Mode.
+
+Advanced technical configuration should be progressively disclosed.
+
+---
+
+# 20. REQUIRED DELIVERABLES
+
+Provide:
+
+1. Competitive benchmark.
+2. Product architecture.
+3. Functional application.
+4. Persistent database.
+5. Model gateway.
+6. Gemini integration.
+7. Azure OpenAI integration.
+8. Agentic conversational runtime.
+9. Multi-source knowledge ingestion.
+10. REST and OpenAPI connector.
+11. Website widget.
+12. Telegram integration.
+13. WhatsApp integration.
+14. Unified inbox.
+15. Monitoring dashboard.
+16. Developer extension SDK.
+17. Automated test suite.
+18. Deployment documentation.
+19. Channel installation manuals.
+20. Security assessment.
+21. Known limitations.
+22. Commercial roadmap.
+
+For every feature, clearly report:
+
+- Implemented.
+- Tested.
+- Partially implemented.
+- Mocked.
+- Not implemented.
+
+Never represent a mock integration as a working integration.
+
+---
+
+# 21. FINAL PRODUCT ACCEPTANCE CRITERIA
+
+KRESNA must demonstrate this complete user journey:
+
+A new customer signs up.
+
+They create a chatbot.
+
+They upload an Excel FAQ and PDF documents.
+
+They connect an API using an OpenAPI specification or simple REST configuration.
+
+They add their Gemini API key.
+
+They select a model.
+
+They test natural conversations.
+
+The agent understands the user's context and dynamically uses knowledge and tools.
+
+They connect the chatbot to a website.
+
+They connect the same chatbot to WhatsApp and Telegram.
+
+They publish the chatbot.
+
+They monitor all conversations, response quality, integrations, latency, and AI costs from one dashboard.
+
+The same chatbot intelligence must work consistently across channels.
+
+A non-technical user should be able to perform the basic setup without writing code.
+
+A developer should be able to extend the platform using the SDK and optional Python integrations.
+
+The system must be designed as a commercial multi-tenant SaaS, not an internal single-company chatbot.
+
+## FINAL PRINCIPLE
+
+The most important feature of KRESNA is not the chatbot builder, the number of integrations, or the dashboard.
+
+It is the intelligence of the actual conversation.
+
+A user should be able to talk naturally, explain a problem in their own words, change topics, provide incomplete information, and ask for actions without learning a predefined chatbot workflow.
+
+The AI must understand the situation, retrieve relevant knowledge, choose appropriate actions, and continue until it can resolve the request or transparently explain its limitation.
+
+BUILD A PRODUCT THAT MAKES CREATING A CHATBOT EASY AND USING A CHATBOT FEEL NATURAL.
+
+START WITH PHASE 0.
+
+After presenting the research and architecture, proceed with Phase 1 only. Implement real working functionality, not static mockups. Maintain a clear project roadmap and test report.
+
+Do not claim that the entire product is complete until all acceptance criteria have been verified.
